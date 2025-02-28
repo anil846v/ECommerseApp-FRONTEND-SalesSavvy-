@@ -29,11 +29,13 @@ export default function LoginPage() {
 
       const data = await response.json();
 
-      if (response.ok) {
+     if (response.ok) {
         if (data.role === "CUSTOMER") {
           navigate("/customerhome");
         } else if (data.role === "ADMIN") {
-          navigate("/admindashboard");
+          const errorMessage =
+          data.error || "Only Customers login through this page. Please try again.ADMIN's aren't allowed";
+        throw new Error(errorMessage);
         } else {
           navigate("/"); // Redirect to a default page if role is unknown
         }
