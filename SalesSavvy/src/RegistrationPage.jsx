@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './assets/styles.css';
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export default function RegistrationPage() {
   const [username, setUsername] = useState('');
@@ -105,8 +107,8 @@ export default function RegistrationPage() {
         </form>
         <p className="form-footer">
           Already a user?{' '}
-          <a href="/" className="form-link">Log in here</a>  or Admin?
-          <a href="/admin" className="form-link"> Log in here</a>
+          <Link to="/" className="form-link">Log in here</Link>  or Admin?
+          <Link to="/admin" className="form-link"> Log in here</Link>
         </p>
        
       </div>
